@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json());
 app.use(cookieparser());
 app.use(cors({
-    origin:["http://localhost:5173/"],
+    origin:["http://localhost:5173"],
     credentials:true
 }));
 
@@ -22,7 +22,7 @@ mongoose.connect(process.env.DB)
 })
 .catch(err=>console.log(err));
 
-app.listen(process.env.PORT,()=>{
+app.listen(4000||process.env.PORT,()=>{
      console.log(`Listening at port ${process.env.PORT}`)
 });
 
